@@ -5,11 +5,11 @@ header("Access-Control-Allow-Origin: http://localhost:3000");
 header('Content-Type: application/json');
 include 'db_config.php';
 
-
+// Get POST data
 $data = json_decode(file_get_contents('php://input'), true);
 
 
-
+// Check if username and password are provided
 if (isset($data['username']) && isset($data['password']) && isset($data['email']) && isset($data['name']) && isset($data['type'])) {
     $username = $conn->real_escape_string($data['username']);
     $password = password_hash($conn->real_escape_string($data['password']), PASSWORD_DEFAULT);
@@ -27,7 +27,7 @@ $result = $stmt->get_result();
 if ($result->num_rows > 0) {
     echo json_encode(array('success' => false, 'message' => 'username already exists.'));
 } else {
-    
+    // Insert user into database
     $sql = "INSERT INTO users (username, password,name,email,type) VALUES ('$username', '$password','$name','$email','$type')";
 
     if ($conn->query($sql) === TRUE) {
@@ -37,7 +37,7 @@ if ($result->num_rows > 0) {
     }
 }
 } else {
- 
+    // Invalid request
     echo json_encode(array('success' => false, 'message' => 'Invalid request'));
 }
 

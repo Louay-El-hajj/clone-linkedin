@@ -4,7 +4,7 @@ header("Content-Type: application/json; charset=UTF-8");
 
 include 'db_config.php';
 
-$sql = "SELECT id,  content FROM posts";
+$sql = "SELECT posts.id as id,  posts.content as content ,users.name as name, users.user_id as user_id FROM posts inner join users on users.user_id=posts.user_id";
 $result = $conn->query($sql);
 
 $posts = array();

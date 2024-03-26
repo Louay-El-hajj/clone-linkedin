@@ -1,0 +1,64 @@
+/* LoginForm.css */
+.signup{
+  background-color: #F1F0ED;
+}
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.signup-form {
+  width: 300px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.signup-heading {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 5px;
+}
+.bleu{
+  color: blue;
+  text-decoration: underline;
+}
+.headertext{
+  font-size: xx-large;
+  text-align: center;
+  align-content: center;
+  color: black;
+}
+.form-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-submit:hover {
+  background-color: #0056b3;
+}
